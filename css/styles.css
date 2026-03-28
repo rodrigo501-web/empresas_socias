@@ -1,0 +1,109 @@
+:root {
+    --neon-blue: #0047FF;
+    --neon-orange: #FF6B00;
+    --current-color: #0047FF;
+    --dark-bg: #010816;
+    --tienda-bg-gradient: radial-gradient(circle at center, #fdfdfd 0%, #fdfdfd 100%);
+}
+
+body { font-family: 'Inter', sans-serif; background: #fdfdfd; overflow-x: hidden; transition: background 0.5s ease; }
+
+/* NAVBAR */
+.navbar { background: rgba(1, 8, 22, 0.96); backdrop-filter: blur(20px); border-bottom: 2px solid var(--current-color); }
+.main-logo { height: 80px; width: auto; transition: transform 0.3s ease, filter 0.3s ease; }
+.main-logo:hover { transform: scale(1.1); filter: drop-shadow(0 0 12px var(--current-color)); }
+
+@keyframes entrada-logo {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+.main-logo { animation: entrada-logo 0.8s ease-out; }
+
+.btn-neon-orange { background: var(--neon-orange); color: white; border: none; transition: 0.3s; }
+.btn-neon-orange:hover { background: #e65a00; box-shadow: 0 0 15px rgba(255, 107, 0, 0.4); color: white; }
+
+/* HERO & BLOBS */
+.hero-section { background: var(--dark-bg); position: relative; overflow: hidden; }
+.hero-blobs div { position: absolute; filter: blur(120px); opacity: 0.5; border-radius: 50%; transition: 1.2s ease; }
+.blob-1 { width: 400px; height: 400px; background: var(--neon-blue); top: -10%; left: -5%; }
+.blob-2 { width: 350px; height: 350px; background: var(--neon-orange); bottom: -10%; right: -5%; }
+
+.glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); }
+.rounded-50 { border-radius: 40px !important; }
+
+/* MAIN CONTENT */
+#main-content {
+    background: var(--tienda-bg-gradient);
+    border-radius: 30px; 
+    padding: 20px;
+    transition: background 0.5s ease;
+}
+
+/* TIENDA & REDES SOCIALES */
+.social-header a { font-size: 1.8rem; transition: transform 0.3s ease, color 0.3s ease; display: inline-block; }
+.social-header a:hover { transform: scale(1.2); }
+
+/* LOGOS TIENDA */
+.tienda-logo {
+  height: 200px; 
+  width: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 15px rgba(255,255,255,0.5); 
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.tienda-logo:hover {
+  transform: scale(1.15);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4), 0 0 25px rgba(255,255,255,0.7), 0 0 10px var(--current-color); 
+}
+
+/* CAROUSEL TIENDA */
+.store-carousel .carousel-inner {
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2), 0 0 10px var(--current-color);
+}
+.store-carousel .carousel-item img { height: 400px; object-fit: cover; }
+.store-carousel .carousel-item iframe { height: 400px; }
+
+/* PRODUCTOS - OPTIMIZADOS PARA NO ROMPERSE */
+.product-card {
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.9); 
+    padding: 20px;
+    border: 1px solid #eee;
+    transition: 0.4s ease;
+    display: flex; /* Nuevo: usa flexbox para estructura interna */
+    flex-direction: column; 
+    justify-content: space-between; /* Empuja el botón hacia abajo */
+    height: 100%; /* Obliga a llenar la altura de la columna */
+}
+.product-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-color: var(--current-color); }
+.product-card img { 
+    border-radius: 18px; 
+    height: 180px; 
+    width: 100%;
+    object-fit: cover; 
+    background-color: #f0f0f0;
+    margin-bottom: 15px;
+}
+.product-card h6 {
+    margin-bottom: 15px;
+    flex-grow: 1; /* Permite que el texto ocupe el espacio disponible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-title-neon { font-weight: 800; border-left: 6px solid var(--current-color); padding-left: 15px; margin-bottom: 25px; }
+.btn-dynamic { background: var(--current-color); color: #fff; border-radius: 12px; border: none; padding: 10px; font-weight: bold; width: 100%; margin-top: auto;}
+
+/* FOOTER */
+.footer-corporate { background: #01050d; border-top: 1px solid #1a1a1a; }
+.footer-links a { color: #777; text-decoration: none; transition: 0.3s; }
+.footer-links a:hover { color: var(--neon-blue); padding-left: 4px; }
+
+.fw-black { font-weight: 900; }
+.text-neon-orange { color: var(--neon-orange); }
+.text-neon-blue { color: var(--neon-blue); }
